@@ -1,9 +1,7 @@
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
 
-const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
 
 const SYSTEM_PROMPT = `You are the Nexus AI assistant — a friendly, knowledgeable product expert for Nexus AI, a SaaS company that builds AI-powered tools for modern teams.
 
@@ -15,7 +13,6 @@ About Nexus AI:
 - All plans include a 14-day free trial, no credit card required
 - SOC 2 Type II certified, GDPR compliant
 - 300+ integrations including Slack, GitHub, Jira, Salesforce, Notion
-- AI powered by Anthropic's Claude
 
 Your personality:
 - Warm, helpful, and concise
@@ -33,52 +30,49 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid messages" }, { status: 400 });
     }
 
-    // Filter to only user/assistant messages for the API
-    const apiMessages = messages
+    const filtered = messages
       .filter((m: { role: string; content: string }) =>
-        m.role === "user" || m.role === "assistant"
-      )
-      .map((m: { role: string; content: string }) => ({
-        role: m.role as "user" | "assistant",
-        content: m.content,
-      }))
-      // Drop empty assistant placeholders
-      .filter((m) => m.content.trim().length > 0);
+        (m.role === "user" || m.role === "assistant") && m.content.trim().length > 0
+      );
+
+    // All but the last message go into history; drop leading model messages
+    // (the UI initializes with an assistant greeting which must not be first in history)
+    const historyRaw = filtered.slice(0, -1).map((m: { role: string; content: string }) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }],
+    }));
+    const firstUserIdx = historyRaw.findIndex((m) => m.role === "user");
+    const history = firstUserIdx === -1 ? [] : historyRaw.slice(firstUserIdx);
+
+    const lastMessage = filtered[filtered.length - 1];
+
+    const model = genAI.getGenerativeModel({
+      model: "gemini-3-flash-preview",
+      systemInstruction: SYSTEM_PROMPT,
+    });
+
+    const chat = model.startChat({ history });
+    const result = await chat.sendMessageStream(lastMessage.content);
 
     const encoder = new TextEncoder();
 
     const stream = new ReadableStream({
       async start(controller) {
         try {
-          const messageStream = client.messages.stream({
-            model: "claude-opus-4-6",
-            max_tokens: 1024,
-            thinking: { type: "adaptive" },
-            system: SYSTEM_PROMPT,
-            messages: apiMessages,
-          });
-
-          for await (const event of messageStream) {
-            if (
-              event.type === "content_block_delta" &&
-              event.delta.type === "text_delta"
-            ) {
-              const data = JSON.stringify({ delta: event.delta });
+          for await (const chunk of result.stream) {
+            const text = chunk.text();
+            if (text) {
               controller.enqueue(
-                encoder.encode(`data: ${data}\n\n`)
+                encoder.encode(`data: ${JSON.stringify({ text })}\n\n`)
               );
             }
           }
-
           controller.enqueue(encoder.encode("data: [DONE]\n\n"));
           controller.close();
         } catch (err) {
           console.error("Stream error:", err);
-          const errorMsg = err instanceof Anthropic.APIError
-            ? `API error ${err.status}: ${err.message}`
-            : "Internal server error";
           controller.enqueue(
-            encoder.encode(`data: ${JSON.stringify({ error: errorMsg })}\n\n`)
+            encoder.encode(`data: ${JSON.stringify({ error: "Stream error" })}\n\n`)
           );
           controller.close();
         }
