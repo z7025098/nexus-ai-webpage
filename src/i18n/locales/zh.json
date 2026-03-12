@@ -1,0 +1,212 @@
+{
+  "nav": {
+    "services": "服务",
+    "about": "关于我们",
+    "projects": "项目案例",
+    "testimonials": "客户评价",
+    "contact": "联系我们",
+    "getQuote": "免费报价"
+  },
+  "hero": {
+    "badge": "退伍军人企业 · 加州太阳能总承包",
+    "title1": "驱动加州",
+    "title2": "清洁能源未来",
+    "subtitle": "全方位太阳能EPC公司，提供住宅、商业及公用事业级解决方案。Tesla认证及Enphase白金安装商，服务洛杉矶及整个南加州地区。",
+    "cta1": "获取免费报价",
+    "cta2": "查看项目案例",
+    "stat1Value": "500+",
+    "stat1Label": "已完成项目",
+    "stat2Value": "25MW+",
+    "stat2Label": "装机容量",
+    "stat3Value": "Tesla",
+    "stat3Label": "认证安装商",
+    "stat4Value": "退伍军人",
+    "stat4Label": "创办企业"
+  },
+  "services": {
+    "subtitle": "我们的服务",
+    "title": "全面的太阳能与储能解决方案",
+    "description": "从屋顶太阳能到公用事业级电站，我们在加州设计、建造和维护清洁能源系统。",
+    "residential": {
+      "title": "家用太阳能",
+      "description": "为您的家庭量身定制屋顶太阳能系统。采用优质一级组件和专业安装，最高可减少90%电费。"
+    },
+    "commercial": {
+      "title": "商用太阳能",
+      "description": "适用于企业、仓库和零售场所的可扩展太阳能解决方案。通过加速折旧和联邦税收抵免最大化投资回报。"
+    },
+    "battery": {
+      "title": "电池储能",
+      "description": "Tesla Powerwall和Enphase IQ电池安装。储存太阳能、防范停电，优化分时电价节省。"
+    },
+    "ev": {
+      "title": "电动车充电桩安装",
+      "description": "为住宅、商业和多户住宅提供二级和直流快充安装。为电动汽车未来做好准备。"
+    },
+    "carport": {
+      "title": "太阳能车棚",
+      "description": "在保护车辆的同时发电的双用途结构。适用于商业停车场、学校和社区。"
+    },
+    "farm": {
+      "title": "光伏电站与储能系统",
+      "description": "公用事业级太阳能电站和电池储能系统。从土地评估到并网的端到端EPC服务。"
+    }
+  },
+  "certifications": {
+    "title": "受行业领导者信赖",
+    "tesla": "Tesla认证",
+    "enphase": "Enphase白金",
+    "nabcep": "NABCEP认证",
+    "cslb": "CSLB持牌",
+    "bbb": "BBB认证"
+  },
+  "whyUs": {
+    "subtitle": "为什么选择我们",
+    "title": "与众不同，经久耐用",
+    "block1": {
+      "badge": "全方位EPC",
+      "name": "全自有团队",
+      "tagline": "从设计到验收，全程自主完成",
+      "description": "我们不将您的项目外包。我们的持证工程师、认证电工和专职项目经理团队负责每个阶段——确保质量、责任和从第一天起的无缝沟通。",
+      "feature1": "持证PE工程师进行系统设计",
+      "feature2": "认证电工参与每次安装",
+      "feature3": "专属项目经理全程跟进",
+      "feature4": "自有质检团队"
+    },
+    "block2": {
+      "badge": "我们的价值观",
+      "name": "退伍军人创办，使命驱动",
+      "tagline": "军事纪律融合工程卓越",
+      "description": "由退伍军人创立，Nason Solar以军事服务所培养的精准、责任和荣誉运营。我们把每个项目当作使命——精心策划、完美执行、绝不偷工减料。",
+      "feature1": "按时交付项目",
+      "feature2": "严格的质量控制流程",
+      "feature3": "每个工地安全第一",
+      "feature4": "透明、诚实的沟通"
+    },
+    "block3": {
+      "badge": "资质认证",
+      "name": "Tesla与Enphase认证",
+      "tagline": "行业最受信赖的品牌，由专家安装",
+      "description": "作为Tesla认证安装商和Enphase白金合作伙伴，我们提供最先进的太阳能和储能技术——由制造商保修和我们自己的施工质保双重保障。",
+      "feature1": "Tesla Powerwall认证安装商",
+      "feature2": "Enphase白金合作伙伴",
+      "feature3": "一级太阳能组件选用",
+      "feature4": "25年性能质保"
+    }
+  },
+  "process": {
+    "subtitle": "服务流程",
+    "title": "从咨询到清洁能源，六步完成",
+    "step1": {
+      "title": "免费咨询与现场评估",
+      "description": "我们评估您的物业、用电量和目标，确定最佳太阳能方案。"
+    },
+    "step2": {
+      "title": "定制系统设计",
+      "description": "我们的工程师设计优化的系统，实现最大发电量和投资回报。"
+    },
+    "step3": {
+      "title": "许可与采购",
+      "description": "我们处理所有许可证、HOA审批、电力公司互连申请和设备采购。"
+    },
+    "step4": {
+      "title": "专业安装",
+      "description": "我们的认证团队精确安装系统，住宅项目通常1-3天内完成。"
+    },
+    "step5": {
+      "title": "验收与并网",
+      "description": "我们协调市政检查和电力公司审批，让您的系统接入电网并开始发电。"
+    },
+    "step6": {
+      "title": "监控与维护",
+      "description": "全天候系统监控和主动维护，确保数十年的最佳性能。"
+    }
+  },
+  "testimonials": {
+    "subtitle": "客户故事",
+    "title": "听听我们的客户怎么说",
+    "description": "聆听南加州各地选择太阳能的业主和企业的声音。"
+  },
+  "quote": {
+    "subtitle": "立即开始",
+    "title": "获取免费太阳能评估",
+    "description": "我们的太阳能专家将分析您的物业、设计定制系统，并准确展示您能节省多少。",
+    "benefit1": "全面的场地和遮阳分析",
+    "benefit2": "定制系统设计与方案",
+    "benefit3": "详细的投资回报与节省计算",
+    "benefit4": "融资方案和补贴指导",
+    "phone": "(626) 559-0000",
+    "email": "info@nasonsolar.com",
+    "formTitle": "申请免费报价",
+    "name": "姓名",
+    "namePlaceholder": "张三",
+    "phoneField": "电话号码",
+    "phonePlaceholder": "(555) 000-0000",
+    "emailField": "电子邮箱",
+    "emailPlaceholder": "zhangsan@example.com",
+    "address": "物业地址",
+    "addressPlaceholder": "洛杉矶市主街123号",
+    "projectType": "项目类型",
+    "projectTypes": {
+      "residential": "家用太阳能",
+      "commercial": "商用太阳能",
+      "battery": "电池储能",
+      "ev": "电动车充电桩",
+      "carport": "太阳能车棚",
+      "other": "其他"
+    },
+    "electricBill": "月度电费",
+    "electricBills": {
+      "placeholder": "选择范围",
+      "range1": "100美元以下",
+      "range2": "100 - 200美元",
+      "range3": "200 - 400美元",
+      "range4": "400 - 600美元",
+      "range5": "600美元以上"
+    },
+    "notes": "补充说明",
+    "notesPlaceholder": "告诉我们您的项目目标...",
+    "submit": "申请免费报价",
+    "submitting": "提交中...",
+    "success": "感谢您！我们将在24小时内与您联系。",
+    "error": "出了点问题，请重试。"
+  },
+  "footer": {
+    "tagline": "退伍军人创办的太阳能EPC公司，服务洛杉矶和南加州地区。",
+    "license": "CSLB许可证 #1234567",
+    "services": "服务项目",
+    "company": "公司信息",
+    "resources": "资源中心",
+    "contactInfo": "联系方式",
+    "residentialSolar": "家用太阳能",
+    "commercialSolar": "商用太阳能",
+    "batteryStorage": "电池储能",
+    "evCharger": "电动车充电桩安装",
+    "solarCarports": "太阳能车棚",
+    "solarFarm": "光伏电站与储能",
+    "aboutUs": "关于我们",
+    "ourTeam": "我们的团队",
+    "careers": "招聘信息",
+    "blog": "博客",
+    "contact": "联系我们",
+    "solarGuide": "太阳能入门指南",
+    "incentives": "补贴与优惠",
+    "faq": "常见问题",
+    "warranty": "保修信息",
+    "referral": "推荐计划",
+    "address": "加州洛杉矶",
+    "copyright": "Nason Solar, Inc. 保留所有权利。",
+    "veteran": "自豪的退伍军人企业"
+  },
+  "chat": {
+    "title": "Nason Solar 助手",
+    "subtitle": "AI太阳能顾问",
+    "greeting": "您好！我是Nason Solar助手。您可以问我任何关于太阳能安装、电池储能、价格、融资方案的问题，或者了解我们如何帮助您的家庭或企业使用清洁能源。",
+    "placeholder": "咨询太阳能...",
+    "enterToSend": "按Enter发送 · Shift+Enter换行",
+    "suggested1": "太阳能要多少钱？",
+    "suggested2": "你们安装Tesla Powerwall吗？",
+    "suggested3": "有哪些融资方案？",
+    "suggested4": "安装需要多长时间？"
+  }
+}

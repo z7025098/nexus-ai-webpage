@@ -1,0 +1,212 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "projects": "Projects",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "getQuote": "Get Free Quote"
+  },
+  "hero": {
+    "badge": "Veteran-Owned · California Solar EPC",
+    "title1": "Powering California's",
+    "title2": "Clean Energy Future",
+    "subtitle": "Full-service solar EPC company delivering residential, commercial, and utility-scale solutions. Tesla Certified and Enphase Platinum installer serving Los Angeles and all of Southern California.",
+    "cta1": "Get a Free Quote",
+    "cta2": "View Our Projects",
+    "stat1Value": "500+",
+    "stat1Label": "Projects Completed",
+    "stat2Value": "25MW+",
+    "stat2Label": "Installed Capacity",
+    "stat3Value": "Tesla",
+    "stat3Label": "Certified Installer",
+    "stat4Value": "Veteran",
+    "stat4Label": "Owned Business"
+  },
+  "services": {
+    "subtitle": "Our Services",
+    "title": "Comprehensive Solar & Energy Solutions",
+    "description": "From rooftop solar to utility-scale farms, we design, build, and maintain clean energy systems across California.",
+    "residential": {
+      "title": "Residential Solar",
+      "description": "Custom-designed rooftop solar systems for your home. Reduce your electric bill by up to 90% with premium Tier-1 panels and expert installation."
+    },
+    "commercial": {
+      "title": "Commercial Solar",
+      "description": "Scalable solar solutions for businesses, warehouses, and retail. Maximize your ROI with accelerated depreciation and federal tax credits."
+    },
+    "battery": {
+      "title": "Battery Storage",
+      "description": "Tesla Powerwall and Enphase IQ Battery installations. Store solar energy, protect against outages, and optimize your time-of-use savings."
+    },
+    "ev": {
+      "title": "EV Charger Installation",
+      "description": "Level 2 and DC fast charger installations for homes, businesses, and multi-family properties. Future-proof your property for electric vehicles."
+    },
+    "carport": {
+      "title": "Solar Carports",
+      "description": "Dual-purpose structures that protect vehicles while generating clean energy. Ideal for commercial parking lots, schools, and HOA communities."
+    },
+    "farm": {
+      "title": "Solar Farm & BESS",
+      "description": "Utility-scale solar farms and Battery Energy Storage Systems. End-to-end EPC from land assessment to grid interconnection."
+    }
+  },
+  "certifications": {
+    "title": "Trusted by Industry Leaders",
+    "tesla": "Tesla Certified",
+    "enphase": "Enphase Platinum",
+    "nabcep": "NABCEP Certified",
+    "cslb": "CSLB Licensed",
+    "bbb": "BBB Accredited"
+  },
+  "whyUs": {
+    "subtitle": "Why Choose Us",
+    "title": "Built Different. Built to Last.",
+    "block1": {
+      "badge": "Full Service EPC",
+      "name": "Full In-House Team",
+      "tagline": "Design to commissioning, all under one roof",
+      "description": "We don't subcontract your project out. Our team of licensed engineers, certified electricians, and dedicated project managers handle every phase — ensuring quality, accountability, and seamless communication from day one.",
+      "feature1": "Licensed PE engineers for system design",
+      "feature2": "Certified electricians on every install",
+      "feature3": "Dedicated project managers",
+      "feature4": "In-house QC inspectors"
+    },
+    "block2": {
+      "badge": "Our Values",
+      "name": "Veteran-Owned, Mission-Driven",
+      "tagline": "Military discipline meets engineering excellence",
+      "description": "Founded by veterans, Nason Solar operates with the precision, accountability, and honor that military service instills. We treat every project like a mission — with meticulous planning, flawless execution, and no shortcuts.",
+      "feature1": "On-time project delivery",
+      "feature2": "Rigorous quality control protocols",
+      "feature3": "Safety-first on every job site",
+      "feature4": "Transparent, honest communication"
+    },
+    "block3": {
+      "badge": "Certifications",
+      "name": "Tesla & Enphase Certified",
+      "tagline": "The industry's most trusted brands, installed by experts",
+      "description": "As a Tesla Certified Installer and Enphase Platinum Partner, we provide access to the most advanced solar and storage technology available — backed by manufacturer warranties and our own workmanship guarantee.",
+      "feature1": "Tesla Powerwall Certified Installer",
+      "feature2": "Enphase Platinum Partner",
+      "feature3": "Tier-1 solar panel selection",
+      "feature4": "25-year performance warranties"
+    }
+  },
+  "process": {
+    "subtitle": "How It Works",
+    "title": "From Consultation to Clean Energy in 6 Steps",
+    "step1": {
+      "title": "Free Consultation & Site Assessment",
+      "description": "We evaluate your property, energy usage, and goals to determine the best solar solution."
+    },
+    "step2": {
+      "title": "Custom System Design",
+      "description": "Our engineers design a system optimized for maximum production and return on investment."
+    },
+    "step3": {
+      "title": "Permits & Procurement",
+      "description": "We handle all permits, HOA approvals, utility interconnection applications, and equipment procurement."
+    },
+    "step4": {
+      "title": "Professional Installation",
+      "description": "Our certified crew installs your system with precision, typically completed in 1-3 days for residential."
+    },
+    "step5": {
+      "title": "Inspection & Grid Connection",
+      "description": "We coordinate city inspections and utility approval to get your system connected and producing."
+    },
+    "step6": {
+      "title": "Monitoring & Maintenance",
+      "description": "24/7 system monitoring with proactive maintenance to ensure peak performance for decades."
+    }
+  },
+  "testimonials": {
+    "subtitle": "Customer Stories",
+    "title": "What Our Clients Say",
+    "description": "Hear from homeowners and businesses across Southern California who made the switch to solar."
+  },
+  "quote": {
+    "subtitle": "Get Started",
+    "title": "Get Your Free Solar Assessment",
+    "description": "Our solar experts will analyze your property, design a custom system, and show you exactly how much you can save.",
+    "benefit1": "Comprehensive site & shade analysis",
+    "benefit2": "Custom system design & proposal",
+    "benefit3": "Detailed ROI & savings calculation",
+    "benefit4": "Financing options & incentive guidance",
+    "phone": "(626) 559-0000",
+    "email": "info@nasonsolar.com",
+    "formTitle": "Request a Free Quote",
+    "name": "Full Name",
+    "namePlaceholder": "John Smith",
+    "phoneField": "Phone Number",
+    "phonePlaceholder": "(555) 000-0000",
+    "emailField": "Email Address",
+    "emailPlaceholder": "john@example.com",
+    "address": "Property Address",
+    "addressPlaceholder": "123 Main St, Los Angeles, CA",
+    "projectType": "Project Type",
+    "projectTypes": {
+      "residential": "Residential Solar",
+      "commercial": "Commercial Solar",
+      "battery": "Battery Storage",
+      "ev": "EV Charger",
+      "carport": "Solar Carport",
+      "other": "Other"
+    },
+    "electricBill": "Monthly Electric Bill",
+    "electricBills": {
+      "placeholder": "Select range",
+      "range1": "Under $100",
+      "range2": "$100 - $200",
+      "range3": "$200 - $400",
+      "range4": "$400 - $600",
+      "range5": "Over $600"
+    },
+    "notes": "Additional Notes",
+    "notesPlaceholder": "Tell us about your project goals...",
+    "submit": "Request Free Quote",
+    "submitting": "Submitting...",
+    "success": "Thank you! We'll contact you within 24 hours.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "tagline": "Veteran-owned solar EPC company serving Los Angeles and Southern California.",
+    "license": "CSLB License #1234567",
+    "services": "Services",
+    "company": "Company",
+    "resources": "Resources",
+    "contactInfo": "Contact Info",
+    "residentialSolar": "Residential Solar",
+    "commercialSolar": "Commercial Solar",
+    "batteryStorage": "Battery Storage",
+    "evCharger": "EV Charger Installation",
+    "solarCarports": "Solar Carports",
+    "solarFarm": "Solar Farm & BESS",
+    "aboutUs": "About Us",
+    "ourTeam": "Our Team",
+    "careers": "Careers",
+    "blog": "Blog",
+    "contact": "Contact",
+    "solarGuide": "Solar 101 Guide",
+    "incentives": "Incentives & Rebates",
+    "faq": "FAQ",
+    "warranty": "Warranty Info",
+    "referral": "Referral Program",
+    "address": "Los Angeles, California",
+    "copyright": "Nason Solar, Inc. All rights reserved.",
+    "veteran": "Proud Veteran-Owned Business"
+  },
+  "chat": {
+    "title": "Nason Solar Assistant",
+    "subtitle": "AI-Powered Solar Consultant",
+    "greeting": "Hi! I'm the Nason Solar assistant. Ask me anything about solar installation, battery storage, pricing, financing, or how we can help power your home or business with clean energy.",
+    "placeholder": "Ask about solar...",
+    "enterToSend": "Press Enter to send · Shift+Enter for new line",
+    "suggested1": "How much does solar cost?",
+    "suggested2": "Do you install Tesla Powerwall?",
+    "suggested3": "What financing options are available?",
+    "suggested4": "How long does installation take?"
+  }
+}

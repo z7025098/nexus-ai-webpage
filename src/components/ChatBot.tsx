@@ -13,19 +13,14 @@ import {
   Loader2,
   Minimize2,
   Maximize2,
+  Sun,
 } from "lucide-react";
+import { useTranslation } from "@/i18n/useTranslation";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
 }
-
-const SUGGESTED = [
-  "What makes Nexus AI different?",
-  "How does the AI chat feature work?",
-  "What integrations do you support?",
-  "Tell me about your pricing plans",
-];
 
 function ChatMessage({ msg }: { msg: Message }) {
   const isUser = msg.role === "user";
@@ -72,19 +67,27 @@ function TypingIndicator() {
 }
 
 export default function ChatBot() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content:
-        "Hi! I'm the Nexus AI assistant. Ask me anything about our products, pricing, or how we can help your team.",
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [streaming, setStreaming] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Init greeting from translations
+  useEffect(() => {
+    setMessages([{ role: "assistant", content: t("chat.greeting") }]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const suggested = [
+    t("chat.suggested1"),
+    t("chat.suggested2"),
+    t("chat.suggested3"),
+    t("chat.suggested4"),
+  ];
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -108,9 +111,7 @@ export default function ChatBot() {
           body: JSON.stringify({ messages: newMessages }),
         });
 
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status}`);
-        }
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
         const reader = res.body?.getReader();
         if (!reader) throw new Error("No response body");
@@ -118,11 +119,7 @@ export default function ChatBot() {
         const decoder = new TextDecoder();
         let assistantContent = "";
 
-        // Add placeholder
-        setMessages((prev) => [
-          ...prev,
-          { role: "assistant", content: "" },
-        ]);
+        setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
 
         while (true) {
           const { done, value } = await reader.read();
@@ -160,7 +157,7 @@ export default function ChatBot() {
           ...prev,
           {
             role: "assistant",
-            content: "Sorry, I encountered an error. Please try again in a moment.",
+            content: "Sorry, I encountered an error. Please try again.",
           },
         ]);
       } finally {
@@ -207,23 +204,23 @@ export default function ChatBot() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 20 }}
             transition={{ type: "spring", stiffness: 300, damping: 28 }}
-            className={`fixed z-50 bottom-6 right-6 bg-background border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ${
+            className={`fixed z-50 bottom-6 right-6 bg-card border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ${
               expanded
                 ? "w-[min(600px,calc(100vw-3rem))] h-[min(700px,calc(100vh-3rem))]"
                 : "w-[min(380px,calc(100vw-3rem))] h-[520px]"
             }`}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted/50 flex-shrink-0">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted/30 flex-shrink-0">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center">
+                  <Sun className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <div className="font-semibold text-sm">Nexus Assistant</div>
+                  <div className="font-semibold text-sm">{t("chat.title")}</div>
                   <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
-                    Powered by Gemini Flash 3.0
+                    {t("chat.subtitle")}
                   </div>
                 </div>
               </div>
@@ -233,11 +230,7 @@ export default function ChatBot() {
                   className="p-1.5 rounded-md hover:bg-muted transition-colors text-muted-foreground"
                   aria-label={expanded ? "Minimize" : "Expand"}
                 >
-                  {expanded ? (
-                    <Minimize2 className="w-4 h-4" />
-                  ) : (
-                    <Maximize2 className="w-4 h-4" />
-                  )}
+                  {expanded ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
                 </button>
                 <button
                   onClick={() => setOpen(false)}
@@ -263,11 +256,11 @@ export default function ChatBot() {
             {/* Suggested questions */}
             {messages.length === 1 && (
               <div className="px-4 pb-3 flex flex-wrap gap-2 flex-shrink-0">
-                {SUGGESTED.map((q) => (
+                {suggested.map((q) => (
                   <button
                     key={q}
                     onClick={() => sendMessage(q)}
-                    className="text-xs px-3 py-1.5 rounded-full border border-border hover:border-primary hover:bg-primary/5 hover:text-primary transition-colors text-muted-foreground"
+                    className="text-xs px-3 py-1.5 rounded-full border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-colors text-muted-foreground"
                   >
                     {q}
                   </button>
@@ -283,14 +276,14 @@ export default function ChatBot() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Ask me anything..."
-                  className="resize-none min-h-[40px] max-h-[120px] text-sm rounded-xl"
+                  placeholder={t("chat.placeholder")}
+                  className="resize-none min-h-[40px] max-h-[120px] text-sm rounded-xl bg-muted/30"
                   rows={1}
                   disabled={streaming}
                 />
                 <Button
                   size="icon"
-                  className="h-10 w-10 rounded-xl flex-shrink-0"
+                  className="h-10 w-10 rounded-xl flex-shrink-0 bg-primary text-primary-foreground"
                   onClick={() => sendMessage(input)}
                   disabled={!input.trim() || streaming}
                   aria-label="Send"
@@ -303,7 +296,7 @@ export default function ChatBot() {
                 </Button>
               </div>
               <p className="text-[10px] text-muted-foreground text-center mt-2">
-                Press Enter to send · Shift+Enter for new line
+                {t("chat.enterToSend")}
               </p>
             </div>
           </motion.div>

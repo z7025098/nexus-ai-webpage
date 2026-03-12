@@ -1,80 +1,24 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { CheckCircle2, ArrowRight } from "lucide-react";
-
-const plans = [
-  {
-    name: "Starter",
-    monthlyPrice: 0,
-    yearlyPrice: 0,
-    description: "Perfect for individuals and small projects.",
-    cta: "Start for free",
-    ctaVariant: "outline" as const,
-    popular: false,
-    features: [
-      "Up to 3 users",
-      "5 active workflows",
-      "1,000 AI credits / month",
-      "10 GB storage",
-      "Community support",
-      "Basic integrations (10)",
-    ],
-  },
-  {
-    name: "Pro",
-    monthlyPrice: 49,
-    yearlyPrice: 39,
-    description: "For growing teams that need more power and flexibility.",
-    cta: "Start Pro trial",
-    ctaVariant: "default" as const,
-    popular: true,
-    features: [
-      "Up to 25 users",
-      "Unlimited workflows",
-      "50,000 AI credits / month",
-      "100 GB storage",
-      "Priority email support",
-      "All integrations (300+)",
-      "Advanced analytics",
-      "Custom AI prompts",
-    ],
-  },
-  {
-    name: "Enterprise",
-    monthlyPrice: null,
-    yearlyPrice: null,
-    description: "For large organizations with advanced security and scale.",
-    cta: "Contact sales",
-    ctaVariant: "outline" as const,
-    popular: false,
-    features: [
-      "Unlimited users",
-      "Unlimited everything",
-      "Custom AI credit limits",
-      "Unlimited storage",
-      "24/7 dedicated support",
-      "SSO / SAML / SCIM",
-      "Custom contracts & SLA",
-      "On-premise option",
-      "Audit logs & compliance",
-    ],
-  },
-];
+import { CheckCircle2, Phone, Mail, Sun } from "lucide-react";
+import QuoteForm from "@/components/QuoteForm";
+import { useTranslation } from "@/i18n/useTranslation";
 
 export default function Pricing() {
-  const [yearly, setYearly] = useState(true);
+  const { t } = useTranslation();
+
+  const benefits = [
+    t("quote.benefit1"),
+    t("quote.benefit2"),
+    t("quote.benefit3"),
+    t("quote.benefit4"),
+  ];
 
   return (
-    <section id="pricing" className="py-24 sm:py-32 bg-muted/30">
+    <section id="contact" className="py-24 sm:py-32 bg-muted/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-14">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -82,141 +26,83 @@ export default function Pricing() {
             transition={{ duration: 0.5 }}
             className="text-sm font-semibold text-primary uppercase tracking-widest mb-3"
           >
-            Transparent pricing
+            {t("quote.subtitle")}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-bold tracking-tight mb-4"
+            className="text-3xl sm:text-4xl font-bold tracking-tight"
           >
-            Simple plans, no surprises
+            {t("quote.title")}
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-muted-foreground mb-8"
-          >
-            Start free, scale as you grow. Cancel any time.
-          </motion.p>
+        </div>
 
-          {/* Toggle */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left: pitch */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="inline-flex items-center gap-3 bg-muted rounded-full p-1"
+            transition={{ duration: 0.6 }}
           >
-            <button
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
-                !yearly ? "bg-background shadow text-foreground" : "text-muted-foreground"
-              }`}
-              onClick={() => setYearly(false)}
-            >
-              Monthly
-            </button>
-            <button
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
-                yearly ? "bg-background shadow text-foreground" : "text-muted-foreground"
-              }`}
-              onClick={() => setYearly(true)}
-            >
-              Yearly
-              <Badge className="text-[10px] py-0 px-1.5 bg-emerald-100 text-emerald-700 border-0">
-                Save 20%
-              </Badge>
-            </button>
+            {/* Solar icon */}
+            <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
+              <Sun className="w-7 h-7 text-primary" />
+            </div>
+
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              {t("quote.description")}
+            </p>
+
+            <ul className="space-y-4 mb-10">
+              {benefits.map((b) => (
+                <li key={b} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground/80">{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Contact info */}
+            <div className="space-y-3 p-6 bg-card/60 rounded-2xl border border-border/40">
+              <p className="text-sm font-semibold text-muted-foreground uppercase tracking-widest mb-4">
+                Or reach us directly
+              </p>
+              <a
+                href={`tel:${t("quote.phone")}`}
+                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+              >
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-4 h-4 text-primary" />
+                </div>
+                <span className="font-medium">{t("quote.phone")}</span>
+              </a>
+              <a
+                href={`mailto:${t("quote.email")}`}
+                className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+              >
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-4 h-4 text-primary" />
+                </div>
+                <span className="font-medium">{t("quote.email")}</span>
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Right: form */}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-card/60 border border-border/40 rounded-2xl p-6 sm:p-8"
+          >
+            <h3 className="text-xl font-bold mb-6">{t("quote.formTitle")}</h3>
+            <QuoteForm />
           </motion.div>
         </div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          {plans.map((plan, i) => (
-            <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex"
-            >
-              <Card
-                className={`flex flex-col w-full ${
-                  plan.popular
-                    ? "border-primary shadow-lg shadow-primary/10 relative"
-                    : "border-border/60"
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-primary text-primary-foreground px-3 shadow">
-                      Most popular
-                    </Badge>
-                  </div>
-                )}
-                <CardHeader className="pb-4">
-                  <h3 className="font-bold text-lg">{plan.name}</h3>
-                  <p className="text-sm text-muted-foreground">{plan.description}</p>
-                  <div className="mt-4">
-                    {plan.monthlyPrice === null ? (
-                      <div className="text-4xl font-bold">Custom</div>
-                    ) : plan.monthlyPrice === 0 ? (
-                      <div className="text-4xl font-bold">Free</div>
-                    ) : (
-                      <div className="flex items-end gap-1">
-                        <span className="text-4xl font-bold">
-                          ${yearly ? plan.yearlyPrice : plan.monthlyPrice}
-                        </span>
-                        <span className="text-muted-foreground mb-1.5">/mo</span>
-                      </div>
-                    )}
-                    {yearly && plan.monthlyPrice !== null && plan.monthlyPrice > 0 && (
-                      <p className="text-xs text-muted-foreground mt-1">
-                        Billed annually · ${(plan.yearlyPrice! * 12).toLocaleString()}/yr
-                      </p>
-                    )}
-                  </div>
-                </CardHeader>
-
-                <CardContent className="flex flex-col flex-1">
-                  <Button
-                    variant={plan.ctaVariant}
-                    className="w-full mb-6 gap-2"
-                    size="lg"
-                  >
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-
-                  <Separator className="mb-6" />
-
-                  <ul className="space-y-3 flex-1">
-                    {plan.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center text-sm text-muted-foreground mt-8"
-        >
-          All plans include a 14-day free trial. No credit card required.
-        </motion.p>
       </div>
     </section>
   );
