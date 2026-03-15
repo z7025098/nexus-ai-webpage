@@ -25,6 +25,7 @@
     "subtitle": "Our Services",
     "title": "Comprehensive Solar & Energy Solutions",
     "description": "From rooftop solar to utility-scale farms, we design, build, and maintain clean energy systems across California.",
+    "learnMore": "Learn more",
     "residential": {
       "title": "Residential Solar",
       "description": "Custom-designed rooftop solar systems for your home. Reduce your electric bill by up to 90% with premium Tier-1 panels and expert installation."
@@ -118,12 +119,14 @@
     "step6": {
       "title": "Monitoring & Maintenance",
       "description": "24/7 system monitoring with proactive maintenance to ensure peak performance for decades."
-    }
+    },
+    "ctaText": "Ready to get started? Let's design your solar system."
   },
   "testimonials": {
     "subtitle": "Customer Stories",
     "title": "What Our Clients Say",
-    "description": "Hear from homeowners and businesses across Southern California who made the switch to solar."
+    "description": "Hear from homeowners and businesses across Southern California who made the switch to solar.",
+    "googleLabel": "Based on Google Reviews"
   },
   "quote": {
     "subtitle": "Get Started",
@@ -167,7 +170,10 @@
     "submit": "Request Free Quote",
     "submitting": "Submitting...",
     "success": "Thank you! We'll contact you within 24 hours.",
-    "error": "Something went wrong. Please try again."
+    "error": "Something went wrong. Please try again.",
+    "reachDirectly": "Or reach us directly",
+    "responseTime": "We typically respond within 2 hours",
+    "scheduleCall": "Schedule a Call"
   },
   "footer": {
     "tagline": "Veteran-owned solar EPC company serving Los Angeles and Southern California.",

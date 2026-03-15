@@ -25,6 +25,7 @@
     "subtitle": "我们的服务",
     "title": "全面的太阳能与储能解决方案",
     "description": "从屋顶太阳能到公用事业级电站，我们在加州设计、建造和维护清洁能源系统。",
+    "learnMore": "了解更多",
     "residential": {
       "title": "家用太阳能",
       "description": "为您的家庭量身定制屋顶太阳能系统。采用优质一级组件和专业安装，最高可减少90%电费。"
@@ -118,12 +119,14 @@
     "step6": {
       "title": "监控与维护",
       "description": "全天候系统监控和主动维护，确保数十年的最佳性能。"
-    }
+    },
+    "ctaText": "准备好开始了吗？让我们为您设计太阳能系统。"
   },
   "testimonials": {
     "subtitle": "客户故事",
     "title": "听听我们的客户怎么说",
-    "description": "聆听南加州各地选择太阳能的业主和企业的声音。"
+    "description": "聆听南加州各地选择太阳能的业主和企业的声音。",
+    "googleLabel": "基于Google评价"
   },
   "quote": {
     "subtitle": "立即开始",
@@ -167,7 +170,10 @@
     "submit": "申请免费报价",
     "submitting": "提交中...",
     "success": "感谢您！我们将在24小时内与您联系。",
-    "error": "出了点问题，请重试。"
+    "error": "出了点问题，请重试。",
+    "reachDirectly": "或直接联系我们",
+    "responseTime": "我们通常在2小时内回复",
+    "scheduleCall": "预约通话"
   },
   "footer": {
     "tagline": "退伍军人创办的太阳能EPC公司，服务洛杉矶和南加州地区。",
