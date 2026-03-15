@@ -69,10 +69,6 @@ export default function Hero() {
             backgroundSize: "60px 60px",
           }}
         />
-        {/*
-          VIDEO SLOT — drop /public/hero-bg.mp4 to activate.
-          Fades in automatically when the file is present.
-        */}
         <video
           autoPlay
           muted

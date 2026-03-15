@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -10,7 +11,6 @@ import {
   Car,
   Landmark,
   ArrowRight,
-  Camera,
 } from "lucide-react";
 import { useTranslation } from "@/i18n/useTranslation";
 import { cn } from "@/lib/utils";
@@ -102,22 +102,14 @@ export default function Features() {
                   "transition-all duration-300 hover:-translate-y-1.5",
                   "hover:border-primary/30 card-inner-glow"
                 )}>
-                  {/*
-                    IMAGE SLOT — replace the placeholder below with:
-                    <div className="relative aspect-video overflow-hidden">
-                      <Image
-                        src={`/images/service-${s.key}.jpg`}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        alt={t(`services.${s.key}.title`)}
-                      />
-                    </div>
-                  */}
-                  <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-muted/40 to-muted/20">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Camera className="w-8 h-8 text-muted-foreground/25" />
-                    </div>
-                    <div className="absolute bottom-0 right-0 w-28 h-28 bg-primary/6 rounded-full blur-2xl" />
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image
+                      src={`/images/service-${s.key}.jpg`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      alt={t(`services.${s.key}.title`)}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
 
                   <CardContent className="pt-5 pb-6 px-5">

@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Users, Wrench, Award, Camera } from "lucide-react";
+import { ArrowRight, CheckCircle2, Users, Wrench, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "@/i18n/useTranslation";
 
@@ -13,26 +14,23 @@ const blocks = [
     key: "block1",
     icon: Wrench,
     reverse: false,
-    // IMAGE SLOT → /public/images/team-install.jpg (crew on rooftop photo)
-    imageSlot: "team-install",
+    imageSrc: "/images/team-install.jpeg",
   },
   {
     key: "block2",
     icon: Users,
     reverse: true,
-    // IMAGE SLOT → /public/images/team-founder.jpg (founder / veteran team photo)
-    imageSlot: "team-founder",
+    imageSrc: "/images/team-founder.jpeg",
   },
   {
     key: "block3",
     icon: Award,
     reverse: false,
-    // IMAGE SLOT → /public/images/powerwall-install.jpg (Tesla Powerwall installation)
-    imageSlot: "powerwall-install",
+    imageSrc: "/images/powerwall-install.jpg",
   },
 ];
 
-function ParallaxImage({ imageSlot }: { imageSlot: string }) {
+function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -43,21 +41,16 @@ function ParallaxImage({ imageSlot }: { imageSlot: string }) {
   return (
     <div
       ref={ref}
-      className="relative rounded-2xl aspect-[4/3] overflow-hidden border border-border/40 bg-gradient-to-br from-muted/35 to-muted/15"
+      className="relative rounded-2xl aspect-[4/3] overflow-hidden border border-border/40"
     >
-      {/*
-        Replace inner content with:
-        <motion.div style={{ y }} className="absolute inset-[-8%] inset-x-0">
-          <Image src={`/images/${imageSlot}.jpg`} fill className="object-cover" alt="" />
-        </motion.div>
-      */}
-      <motion.div style={{ y }} className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/4 via-transparent to-primary/3" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-muted-foreground/30">
-          <Camera className="w-12 h-12" />
-          <span className="text-xs font-medium tracking-wide">/images/{imageSlot}.jpg</span>
-        </div>
-        <div className="absolute top-0 left-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <motion.div style={{ y }} className="absolute inset-[-8%]">
+        <Image
+          src={src}
+          fill
+          className="object-cover"
+          alt={alt}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
       </motion.div>
     </div>
   );
@@ -155,7 +148,7 @@ export default function Products() {
                   transition={{ duration: 0.6, delay: 0.15 }}
                   className={b.reverse ? "lg:col-start-1 lg:row-start-1" : ""}
                 >
-                  <ParallaxImage imageSlot={b.imageSlot} />
+                  <ParallaxImage src={b.imageSrc} alt={t(`whyUs.${blockKey}.name`)} />
                 </motion.div>
               </motion.div>
             );
