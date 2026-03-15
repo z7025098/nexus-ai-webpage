@@ -100,8 +100,7 @@ export default function Features() {
                 <Card className={cn(
                   "h-full border-border/40 bg-card/80 overflow-hidden group",
                   "transition-all duration-300 hover:-translate-y-1.5",
-                  "hover:shadow-[0_20px_40px_oklch(0.75_0.17_75/0.12)]",
-                  "hover:border-primary/30"
+                  "hover:border-primary/30 card-inner-glow"
                 )}>
                   {/*
                     IMAGE SLOT — replace the placeholder below with:

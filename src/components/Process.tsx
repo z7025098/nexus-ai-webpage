@@ -108,10 +108,10 @@ export default function Process() {
                   </div>
                 )}
 
-                <div className="relative z-10 bg-card/60 border border-border/40 rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_32px_oklch(0.75_0.17_75/0.1)] group">
+                <div className="relative z-10 bg-card/60 border border-border/40 rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_12px_32px_oklch(0.75_0.17_75/0.12)] card-inner-glow group">
                   {/* Step number + icon */}
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-base flex-shrink-0 shadow-[0_0_20px_oklch(0.75_0.17_75/0.35)] group-hover:shadow-[0_0_28px_oklch(0.75_0.17_75/0.5)] transition-shadow">
+                    <div className="relative w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-base flex-shrink-0 shadow-[0_0_20px_oklch(0.75_0.17_75/0.35)] group-hover:shadow-[0_0_32px_oklch(0.75_0.17_75/0.55)] transition-shadow duration-300">
                       {step.number}
                     </div>
                     <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
