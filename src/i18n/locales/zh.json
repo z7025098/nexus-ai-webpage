@@ -126,7 +126,57 @@
     "subtitle": "客户故事",
     "title": "听听我们的客户怎么说",
     "description": "聆听南加州各地选择太阳能的业主和企业的声音。",
-    "googleLabel": "基于Google评价"
+    "googleLabel": "基于Google评价",
+    "items": [
+      {
+        "name": "Michael Chen",
+        "role": "住宅业主",
+        "location": "Arcadia, CA",
+        "avatar": "MC",
+        "project": "12kW系统 + 2× Powerwall",
+        "quote": "Nason Solar从报批到安装只用了6周，全程一手包办。我家的电费从每月380美元降到了几乎为零。团队专业高效，每天施工结束后都打扫得干干净净。"
+      },
+      {
+        "name": "Jennifer Park",
+        "role": "物业经理",
+        "location": "Pasadena, CA",
+        "avatar": "JP",
+        "project": "商业85kW系统",
+        "quote": "我们在三处商业地产上安装了太阳能，Nason全部按时完工且费用低于预算。他们的自营团队让协调工作无缝衔接——一个电话搞定所有事。"
+      },
+      {
+        "name": "Robert Garcia",
+        "role": "餐厅老板",
+        "location": "Los Angeles, CA",
+        "avatar": "RG",
+        "project": "30kW系统 + EV充电桩",
+        "quote": "作为退伍军人，我希望与同为退伍军人创办的企业合作。这些人展现出我在军队中熟悉的标准——有条不紊、严谨彻底、不找借口。强力推荐。"
+      },
+      {
+        "name": "Lisa Wang",
+        "role": "业委会主席",
+        "location": "San Gabriel, CA",
+        "avatar": "LW",
+        "project": "太阳能车棚，45个停车位",
+        "quote": "社区的太阳能车棚项目非常复杂——45个停车位、各类许可证、业委会审批。Nason顺利应对了每一个挑战。居民们对遮阳和省钱双重效果都非常满意。"
+      },
+      {
+        "name": "David Kim",
+        "role": "住宅业主",
+        "location": "Temple City, CA",
+        "avatar": "DK",
+        "project": "10kW + Enphase IQ Battery 10",
+        "quote": "经历过多次停电后，备用储能对我来说是必须的。自安装以来，Enphase系统已经帮我们在三次停电中保持正常用电。物超所值。"
+      },
+      {
+        "name": "Sarah Thompson",
+        "role": "财务总监",
+        "location": "Monrovia, CA",
+        "avatar": "ST",
+        "project": "50kW商业系统 + 储能",
+        "quote": "他们提供的投资回报分析详尽准确。我们在4.2年内就实现了回本，与预测完全吻合。他们对成本和收益的透明度在这个行业实属难得。"
+      }
+    ]
   },
   "quote": {
     "subtitle": "立即开始",

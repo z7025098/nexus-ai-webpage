@@ -7,75 +7,33 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "@/i18n/useTranslation";
 import { cn } from "@/lib/utils";
 
-const testimonials = [
-  {
-    name: "Michael Chen",
-    role: "Homeowner",
-    location: "Arcadia, CA",
-    avatar: "MC",
-    project: "12kW system + 2× Powerwall",
-    quote:
-      "Nason Solar handled everything from permits to installation in 6 weeks. Our electric bill went from $380/month to near zero. The team was professional and cleaned up perfectly after every day's work.",
-    stars: 5,
-  },
-  {
-    name: "Jennifer Park",
-    role: "Property Manager",
-    location: "Pasadena, CA",
-    avatar: "JP",
-    project: "Commercial 85kW system",
-    quote:
-      "We installed solar on three commercial properties. Nason delivered on time and under budget for all three. Their in-house team made coordination seamless — one call handled everything.",
-    stars: 5,
-  },
-  {
-    name: "Robert Garcia",
-    role: "Restaurant Owner",
-    location: "Los Angeles, CA",
-    avatar: "RG",
-    project: "30kW system + EV chargers",
-    quote:
-      "Being a veteran myself, I wanted to work with a fellow vet-owned business. These guys brought the same standards I recognize from service — structured, thorough, no excuses. Highly recommend.",
-    stars: 5,
-  },
-  {
-    name: "Lisa Wang",
-    role: "HOA President",
-    location: "San Gabriel, CA",
-    avatar: "LW",
-    project: "Solar carport, 45 spaces",
-    quote:
-      "The solar carport project for our community was complex — 45 parking spaces, permits, HOA board approvals. Nason navigated every challenge smoothly. Residents are thrilled with both the shade and the savings.",
-    stars: 5,
-  },
-  {
-    name: "David Kim",
-    role: "Homeowner",
-    location: "Temple City, CA",
-    avatar: "DK",
-    project: "10kW + Enphase IQ Battery 10",
-    quote:
-      "After the power outages we've had, backup storage was non-negotiable. The Enphase system has kept our house running through three outages since install. Worth every penny.",
-    stars: 5,
-  },
-  {
-    name: "Sarah Thompson",
-    role: "CFO",
-    location: "Monrovia, CA",
-    avatar: "ST",
-    project: "50kW commercial + BESS",
-    quote:
-      "The ROI analysis they provided was detailed and accurate. We hit payback in 4.2 years, exactly as projected. Their transparency about costs and savings is rare in this industry.",
-    stars: 5,
-  },
-];
+interface TestimonialItem {
+  name: string;
+  role: string;
+  location: string;
+  avatar: string;
+  project: string;
+  quote: string;
+  stars: number;
+}
 
-// Split into pages of 3 for desktop pagination
+const TESTIMONIAL_COUNT = 6;
 const DESKTOP_PER_PAGE = 3;
-const desktopPages = Math.ceil(testimonials.length / DESKTOP_PER_PAGE);
 
 export default function Testimonials() {
   const { t } = useTranslation();
+
+  const testimonials = Array.from({ length: TESTIMONIAL_COUNT }, (_, i) => ({
+    name: t(`testimonials.items.${i}.name`),
+    role: t(`testimonials.items.${i}.role`),
+    location: t(`testimonials.items.${i}.location`),
+    avatar: t(`testimonials.items.${i}.avatar`),
+    project: t(`testimonials.items.${i}.project`),
+    quote: t(`testimonials.items.${i}.quote`),
+    stars: 5,
+  }));
+
+  const desktopPages = Math.ceil(testimonials.length / DESKTOP_PER_PAGE);
   const [desktopPage, setDesktopPage] = useState(0);
   const [mobileIndex, setMobileIndex] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -263,7 +221,7 @@ function TestimonialCard({
   item,
   delay = 0,
 }: {
-  item: (typeof testimonials)[0];
+  item: TestimonialItem;
   delay?: number;
 }) {
   return (
