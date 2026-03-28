@@ -52,7 +52,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <img src="/images/logo.jpg" alt="Nason Solar Logo" className="h-12 w-auto object-contain" />
+              <div className="bg-white p-2 rounded-xl inline-flex items-center justify-center mb-2">
+              <img src="/images/logo.jpg" alt="Nason Solar Logo" className="h-10 w-auto object-contain" />
+            </div>
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed mb-2 max-w-xs">
               {t("footer.tagline")}
