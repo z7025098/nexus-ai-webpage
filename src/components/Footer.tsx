@@ -51,11 +51,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <a href="#" className="flex items-center gap-2 font-bold text-xl mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Sun className="w-4 h-4 text-primary-foreground" />
-              </div>
-              <span className="gradient-text">Nason Solar</span>
+            <a href="#" className="flex items-center gap-2 mb-4">
+              <img src="/images/logo.png" alt="Nason Solar Logo" className="h-12 w-auto object-contain" />
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed mb-2 max-w-xs">
               {t("footer.tagline")}
