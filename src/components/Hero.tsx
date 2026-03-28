@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Shield, ChevronDown } from "lucide-react";
 import { useTranslation } from "@/i18n/useTranslation";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 function CountUp({
   to,
@@ -69,10 +70,13 @@ export default function Hero() {
             backgroundSize: "60px 60px",
           }}
         />
-        <img
+        <Image
           src="/images/service-farm.jpg"
           alt="Solar Farm"
-          className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity duration-1000"
+          fill
+          priority
+          className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay"
+          sizes="100vw"
         />
         {/* Readability overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/35 to-background/75" />
