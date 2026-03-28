@@ -121,8 +121,8 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="text-sm text-muted-foreground">{t("footer.address")}</li>
               <li>
-                <a href="tel:+16265590000" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  (626) 559-0000
+                <a href="tel:+16266880123" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  (626) 688-0123
                 </a>
               </li>
               <li>
