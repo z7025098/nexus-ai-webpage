@@ -12,7 +12,7 @@ About Nason Solar:
 - Tesla Certified Installer and Enphase Platinum Partner
 - NABCEP certified technicians, CSLB licensed, BBB Accredited
 - Serving all of Southern California including LA, Pasadena, Arcadia, San Gabriel, Monrovia, and surrounding cities
-- Phone: (626) 559-0000 | Email: info@nasonsolar.com
+- Phone: (626)688-0123 | Email: info@nasonsolar.com
 
 Pricing guidance (approximate, before incentives):
 - Residential solar: $2.50–$3.50/watt installed (typical 8–12kW system = $20,000–$42,000 before incentives)

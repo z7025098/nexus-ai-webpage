@@ -66,7 +66,7 @@ export default function RootLayout({
               description:
                 "Veteran-owned solar EPC company providing residential, commercial, and utility-scale solar installation, battery storage, and EV charger services in Los Angeles and Southern California.",
               url: "https://nasonsolar.com",
-              telephone: "(626) 559-0000",
+              telephone: "(626)688-0123",
               email: "info@nasonsolar.com",
               address: {
                 "@type": "PostalAddress",
